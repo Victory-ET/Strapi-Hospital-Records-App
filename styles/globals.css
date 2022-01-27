@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.btn{
+  @apply shadow-md py-3 px-6 rounded-md transition duration-300 text-white bg-blue-600 outline-none 
+}
+
+.navigation{}
+  @media screen and (max-width: 640px){
+    .navigation{
+      @apply w-2/6 absolute h-screen bg-white z-30 w-screen left-0 flex items-center justify-center flex-col gap-44 uppercase font-bold text-2xl top-0
+    }
+  }
+
+
 html,
 body {
   padding: 0;
