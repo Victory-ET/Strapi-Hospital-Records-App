@@ -1,7 +1,9 @@
 import React from 'react';
+import Data from './data';
 
 function Cards() {
-  return <div className=" container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-8 py-12">
+  return <div className=' relative'>
+  <div className=" container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-8 py-12">
       <div className=' flex flex-col rounded-md shadow-2xl'>
           <div className=' p-6 flex flex-col items-center'>
               <h1 className=' text-4xl font-black text-blue-600 uppercase'>M</h1>
@@ -38,7 +40,10 @@ function Cards() {
               </div>
           </div>
       </div>
-  </div>;
+  </div>
+  {/* More info on Patient Data */}
+  <Data/>
+  </div>
 }
 
 export default Cards;
