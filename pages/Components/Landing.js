@@ -9,7 +9,7 @@ function Landing() {
           {/* content */}
           <div className="flex flex-1 flex-col items-center lg:items-start">
             <h2 className=" text-3xl text-blue-600 md:text-4xl lg:text-5xl text-center lg:text-left mb-6">
-              Hospital Patient Records available at the click of a button
+              Hospital Patient Records available on Search
             </h2>
             <p className=" text-lg text-center lg:text-left mb-6 text-gray-600">
               A simple app mimicking digitalized hospital records. Built on
