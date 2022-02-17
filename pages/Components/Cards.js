@@ -3,10 +3,13 @@ import Data from "./data";
 
 function Cards({ results }) {
   const [data, moreData] = useState(false);
+  const [fullData, getFullData] = useState([]);
   const pull_data = (dat) => {
     moreData(dat);
     console.log(dat);
   };
+
+  console.log(fullData)
 
   console.log(results);
   return (
@@ -23,7 +26,10 @@ function Cards({ results }) {
               <div className=" flex p-6">
                 <button
                   className=" btn hover:bg-white hover:text-blue-600 border-2 hover:border-blue-600 hover:border-2 "
-                  onClick={() => moreData(true)}
+                  onClick={() => {
+                    moreData(true)
+                    getFullData(item)
+                  }}
                 >
                   More Info
                 </button>
@@ -59,7 +65,7 @@ function Cards({ results }) {
       </div> */}
       </div>
       {/* More info on Patient Data */}
-      <Data open={data} func={pull_data} />
+      <Data open={data} func={pull_data} info={fullData}/>
     </div>
   );
 }

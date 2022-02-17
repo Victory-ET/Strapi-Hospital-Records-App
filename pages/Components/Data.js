@@ -19,16 +19,16 @@ function Data(props) {
           </button>
           <div className=" relative py-3 px-6 bg-white font-Roboto font-medium shadow-2xl">
             <h1 className=" text-center text-3xl font-extrabold mb-5">M</h1>
-            <h3 className=" mb-1">Name: John Doe</h3>
-            <p className=" mb-1">Age: 25</p>
-            <p className=" mb-1">Blood Type: O</p>
-            <p className=" mb-1">Ailment: Cancer</p>
-            <p className=" mb-1">Medicine: Aspirin</p>
-            <p className=" mb-1">Last visit: 12/12/12</p>
-            <p className=" mb-1">Allergies: None</p>
-            <p className=" mb-1">Next of Kin: Isaac Doe</p>
-            <p className=" mb-1">Next of Kin Contact: 0700000</p>
-            <p className=" mb-1">1, Main Street, Dublin, Ireland</p>
+            <h3 className=" mb-1">Name: {props.info.attributes.name}</h3>
+            <p className=" mb-1">Age: {props.info.attributes.age}</p>
+            <p className=" mb-1">Blood Type: {props.info.attributes.blood_type}</p>
+            <p className=" mb-1">Ailment: {props.info.attributes.ailment}</p>
+            <p className=" mb-1">Medicine: {props.info.attributes.medicine}</p>
+            <p className=" mb-1">Last visit: {props.info.attributes.last_visit}</p>
+            <p className=" mb-1">Allergies: {props.info.attributes.allergies}</p>
+            <p className=" mb-1">Next of Kin: {props.info.attributes.next_of_kin}</p>
+            <p className=" mb-1">Next of Kin Contact: {props.info.attributes.next_of_kin_contact}</p>
+            <p className=" mb-1">Address: {props.info.attributes.address}</p>
           </div>
         </div>
       ) : null}
