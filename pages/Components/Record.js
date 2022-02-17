@@ -1,7 +1,34 @@
-import React from "react";
-
+import { React, useState } from "react";
+import MeiliSearch from "meilisearch";
+import axios from "axios";
 
 function Record() {
+  const [initialValue, setInitialValue] = useState("");
+
+  const client = new MeiliSearch({
+    host: "http://127.0.0.1:7700/",
+    apiKey: "masterKey",
+  });
+
+  const index = client.index("patient");
+
+  const search = async () => {
+    const documents = await axios.get(
+      "http://localhost:1337/api/patient-names"
+    );
+
+    var result = documents.data.data;
+    let response = await index.addDocuments(result);
+    console.log(response);
+  };
+
+  const handlesearch = async () => {
+    const search = await index.search(initialValue);
+    console.log(search);
+    console.log(search.hits);
+  };
+
+  search();
   return (
     <div>
       <section className=" bg-gray-100 py-20 mt-20 lg:mt-60" id="Search">
@@ -18,6 +45,11 @@ function Record() {
               type="text"
               placeholder="Enter patient name"
               className=" focus:outline-none flex-1 px-2 py-3 rounded-md text-black border-2 border-blue-600"
+              value={initialValue}
+              onChange={(e) => {
+                setInitialValue(e.target.value);
+                handlesearch();
+              }}
             ></input>
             <button className=" btn flex-1 border-2 hover:bg-white hover:text-blue-600 hover:border-blue-600 hover:border-2">
               Search

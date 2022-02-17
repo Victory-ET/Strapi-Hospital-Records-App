@@ -25,7 +25,7 @@ export default function Home() {
       sendData();
     };
     fetchData();
-  }, []);
+  }, []); 
 
   const sendData = async () => {
     if (sent==false) {
@@ -54,7 +54,7 @@ export default function Home() {
       }
       dataSent(true)
     } else {
-      console.log("data already uploadedd")
+      console.log("data already uploaded")
     }
    
   };

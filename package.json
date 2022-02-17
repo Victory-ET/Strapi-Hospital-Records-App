@@ -14,6 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "axios": "^0.25.0",
+    "meilisearch": "^0.24.0",
     "next": "12.0.8",
     "node-fetch": "^2.6.1",
     "react": "17.0.2",
