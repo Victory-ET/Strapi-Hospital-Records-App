@@ -1,15 +1,20 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import MeiliSearch from "meilisearch";
 import axios from "axios";
 
-function Record() {
+function Record(props) {
+
+  useEffect(() => {
+    handlesearch()
+  },[])
+
   const [initialValue, setInitialValue] = useState("");
 
   const client = new MeiliSearch({
     host: "http://127.0.0.1:7700/",
     apiKey: "masterKey",
   });
-
+  
   const index = client.index("patient");
 
   const search = async () => {
@@ -26,6 +31,7 @@ function Record() {
     const search = await index.search(initialValue);
     console.log(search);
     console.log(search.hits);
+    props.func(search.hits)
   };
 
   search();

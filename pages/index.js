@@ -58,12 +58,22 @@ export default function Home() {
     }
    
   };
+
+  const [getQuery, setQuery] = useState([])
+  const pull_data =(dat)=>{
+    setQuery(dat)
+    console.log(dat)
+  }
+
+  // getQuery.forEach((query)=>{
+  //   console.log(query.attributes.name)
+  // })
   return (
     <div className="font-Roboto">
       <Topnav />
       <Landing />
-      <Record />
-      <Cards />
+      <Record func={pull_data}/>
+      <Cards results={getQuery}/>
       <Footer />
     </div>
   );
